@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人简介 · 郑涛 - 北榆市·昭明中学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"WenQuanYi Micro Hei","Microsoft YaHei",sans-serif;background:#f5f6fa;color:#333;line-height:1.7;font-size:14px;font-weight:normal}
+a{color:#333;text-decoration:none}img{display:block;max-width:100%}
+h1,h2,h3,h4{font-weight:normal}
+body{min-height:100vh;display:flex;flex-direction:column}
+.main{flex:1}
+.top-bar{background:#2c4a7a;color:#fff;padding:8px 40px;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+.top-bar a{color:#ccc;margin-left:18px}
+.header{background:#fff;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd}
+.school-name h1{font-size:26px;color:#2c4a7a;letter-spacing:2px}
+.school-name p{font-size:12px;color:#888;margin-top:2px}
+.search-box{display:flex}
+.search-box input{width:220px;padding:8px 14px;border:1px solid #bbb;border-right:none;border-radius:4px 0 0 4px;outline:none;font-size:14px;background:#fff;color:#333}
+.search-box input:focus{border-color:#888}
+.search-box button{padding:8px 16px;border:1px solid #888;background:#888;color:#fff;cursor:pointer;border-radius:0 4px 4px 0;font-size:14px}
+.search-box button:hover{background:#666}
+.nav-bar{background:#fff;border-bottom:1px solid #ddd;padding:0 40px;position:sticky;top:0;z-index:100}
+.nav-bar ul{display:flex;list-style:none}
+.nav-bar li a{display:block;padding:14px 22px;font-size:15px;color:#444;border-bottom:3px solid transparent;transition:all .2s}
+.nav-bar li a:hover{color:#2c4a7a;border-bottom-color:#aaa}
+.nav-bar li a.active{color:#2c4a7a;border-bottom-color:#aaa}
+.profile-wrap{max-width:1000px;margin:30px auto;padding:0 20px;display:flex;gap:32px}
+.profile-left{flex:0 0 260px;text-align:center}
+.profile-left .avatar{width:200px;height:200px;border-radius:12px;overflow:hidden;border:1px solid #ddd;margin:0 auto 16px}
+.profile-left .avatar img{width:100%;height:100%;object-fit:cover}
+.profile-left .p-name{font-size:22px;color:#2c4a7a;margin-bottom:6px}
+.profile-left .p-title{font-size:13px;color:#777;margin-bottom:8px}
+.profile-left .badge{display:inline-block;font-size:12px;color:#777;background:#f0f0f0;padding:3px 10px;border-radius:3px}
+.profile-right{flex:1}
+.sec-title{font-size:18px;color:#2c4a7a;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid #ddd}
+.intro-p{font-size:14px;color:#555;margin-bottom:14px;text-align:justify}
+.intro-p b{color:#2c4a7a;font-weight:500}
+.tl{margin-top:8px}
+.tl-item{display:flex;padding:12px 0;border-bottom:1px dashed #e0e0e0}
+.tl-date{flex:0 0 110px;font-size:13px;color:#888}
+.tl-content{flex:1;font-size:14px;color:#555}
+.footer{background:#2c4a7a;color:#ccc;text-align:center;padding:20px;font-size:13px;line-height:2}
+.footer .disclaimer{color:#bbb;font-size:12px}
+
+#searchHint{font-size:13px;color:#555;background:#f0f0f0;border:1px solid #ddd;padding:8px 14px;border-radius:4px;margin-top:8px;max-width:320px;opacity:0;transform:translateY(-6px);transition:opacity .25s,transform .25s;pointer-events:none;position:absolute;z-index:200;}#searchHint.show{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<div class="top-bar">
+    <span>欢迎访问北榆市·昭明中学官方网站</span>
+    <div><a href="#">教师入口</a><a href="#">学生入口</a><a href="#">家长入口</a></div>
+</div>
+<div class="header">
+    <div class="school-name">
+        <h1>北榆市·昭明中学</h1>
+        <p>Beiyu Zhaoming High School · 建校于1956年</p>
+    </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="输入师生姓名检索...">
+        <button onclick="doSearch()">搜索</button>
+    </div>
+</div>
+<nav class="nav-bar">
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="news.html">近期大事</a></li>
+        <li><a href="leaders.html">领导班子</a></li>
+        <li><a href="teachers.html">名师风貌</a></li>
+        <li><a href="students.html">优秀学生</a></li>
+        <li><a href="about.html">关于我们</a></li>
+    </ul>
+</nav>
+<div class="main">
+<div class="profile-wrap">
+    <aside class="profile-left">
+        <div class="avatar"><img src="images/郑涛.png" alt="郑涛"></div>
+        <div class="p-name">郑涛</div>
+        <div class="p-title">物理教研组 · 竞赛主教练</div>
+        <span class="badge">教师</span>
+    </aside>
+    <section class="profile-right">
+        <h2 class="sec-title">个人简介</h2>
+        <p class="intro-p">郑涛老师是我校物理教研组核心成员、学科竞赛主教练，指导学生多次在全国物理联赛中获奖。课堂生动有趣，注重实验探究，培养了大批具备扎实物理素养的优秀学子。</p>
+        <h2 class="sec-title">在校记录</h2>
+        <div class="tl"><div class="tl-item"><div class="tl-date">2012年9月</div><div class="tl-content">进入昭明中学物理教研组任教。</div></div><div class="tl-item"><div class="tl-date">2019年6月</div><div class="tl-content">带队获全国高中生物理联赛省级一等奖5人次。</div></div><div class="tl-item"><div class="tl-date">2024年11月</div><div class="tl-content">获评市级骨干教师称号。</div></div></div>
+    </section>
+</div>
+</div>
+<footer class="footer">
+    <p>© 2024-2025 北榆市·昭明中学 版权所有</p>
+    <p class="disclaimer">此网站为arg解密需要，其中所有信息均为虚构，切勿当真</p>
+</footer>
+<script>var searchMap = {
+    "李思雨":"lsy.html","lsy":"lsy.html",
+    "王浩然":"whr.html","whr":"whr.html",
+    "陈思远":"ces.html","ces":"ces.html",
+    "赵雨萱":"zyx.html","zyx":"zyx.html",
+    "刘子轩":"lzx2.html","lzx":"lzx2.html","刘子轩2":"lzx2.html",
+    "孙梦琪":"smq.html","smq":"smq.html",
+    "张明远":"zyy.html","zyy":"zyy.html",
+    "吴敏":"wm.html","wm":"wm.html",
+    "郑涛":"zt.html","zt":"zt.html",
+    "黄丽华":"hlh.html","hlh":"hlh.html",
+    "刘洋":"ly.html","ly":"ly.html",
+    "孙丽娟":"slj.html","slj":"slj.html",
+    "赵建国":"zjg.html","zjg":"zjg.html",
+    "刘红梅":"lhm.html","lhm":"lhm.html",
+    "陈志强":"czh.html","czh":"czh.html",
+    "周伟":"zw.html","zw":"zw.html",
+    "吴敏2":"wmyj.html","wmyj":"wmyj.html",
+    "环境监测终端":"env_monitor.html","环境监测":"env_monitor.html","创新项目":"env_monitor.html","ems":"env_monitor.html",
+    "数据附件":"logs.html","日志":"logs.html","归档":"logs.html",
+    "实验楼":"lab_building.html","设施":"lab_building.html",
+    "监控":"monitor_archive.html","监控资料":"monitor_archive.html",
+    "线索":"clue_dossier.html","证据":"clue_dossier.html","异常":"clue_dossier.html","汇编":"clue_dossier.html"
+};
+
+function doSearch(){
+    var kw=document.getElementById("searchInput").value.trim();
+    if(kw==="") return;
+    var visitedMonitor=(sessionStorage.getItem("visited_monitor")==="1");
+    if(visitedMonitor){
+        if(kw==="李思雨"||kw==="lsy"){window.location.href="clue_dossier.html";return;}
+        if(kw==="王浩然"||kw==="whr"){window.location.href="clue_dossier.html";return;}
+    }
+    if(searchMap[kw]) window.location.href=searchMap[kw];
+    else alert("未查找到对应信息");
+}
+document.getElementById("searchInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") doSearch();
+});
+</script>
+</body>
+</html>

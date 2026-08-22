@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>违规违纪举报 · 北榆市教育体育局</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"WenQuanYi Micro Hei","Microsoft YaHei",sans-serif;background:#f5f6fa;color:#333;line-height:1.7;font-size:14px;font-weight:normal}
+a{color:#333;text-decoration:none}
+body{min-height:100vh;display:flex;flex-direction:column}
+.main{flex:1}
+
+/* 机关头部 */
+.header{background:#fff;padding:22px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #1f3a6c}
+.org-name h1{font-size:24px;color:#1f3a6c;letter-spacing:2px}
+.org-name p{font-size:12px;color:#888;margin-top:2px;letter-spacing:1px}
+.header .hotline{font-size:14px;color:#555}
+.header .hotline b{color:#c0392b}
+
+/* 举报主体 */
+.report-wrap{max-width:780px;margin:36px auto;padding:0 20px}
+.report-wrap h2.page-title{font-size:22px;color:#1f3a6c;margin-bottom:8px;padding-bottom:10px;border-bottom:2px solid #ddd}
+.report-wrap .sub-tip{font-size:13px;color:#888;margin-bottom:24px;line-height:1.8}
+
+.report-card{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:28px 30px}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:14px;color:#444;margin-bottom:8px;font-weight:500}
+.field label .req{color:#c0392b;margin-right:3px}
+.field label .opt{color:#999;font-size:12px;font-weight:normal;margin-left:6px}
+.field input[type="text"],.field input[type="tel"],.field select,.field textarea{
+  width:100%;padding:10px 14px;border:1px solid #bbb;border-radius:4px;font-size:14px;
+  background:#fff;color:#333;outline:none;font-family:inherit;transition:border-color .2s
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#1f3a6c}
+.field textarea{resize:vertical;min-height:130px}
+.field .hint{font-size:12px;color:#aaa;margin-top:5px}
+
+/* 举报类型单选 */
+.radio-group{display:flex;flex-wrap:wrap;gap:10px}
+.radio-group label{display:flex;align-items:center;gap:6px;padding:7px 14px;border:1px solid #ddd;border-radius:20px;cursor:pointer;font-size:13px;color:#555;transition:all .2s}
+.radio-group label:hover{border-color:#aaa;color:#1f3a6c}
+.radio-group input{accent-color:#1f3a6c}
+.radio-group label.checked{border-color:#1f3a6c;color:#1f3a6c;background:#eef2f8}
+
+/* 提交 */
+.actions{display:flex;align-items:center;gap:14px;margin-top:8px}
+.btn-submit{padding:11px 34px;background:#1f3a6c;color:#fff;border:none;border-radius:4px;font-size:15px;cursor:pointer;transition:background .2s}
+.btn-submit:hover{background:#15294d}
+.btn-reset{padding:11px 22px;background:#fff;color:#666;border:1px solid #ccc;border-radius:4px;font-size:14px;cursor:pointer}
+.btn-reset:hover{background:#f0f0f0}
+.tip-msg{font-size:13px;color:#888;margin-top:14px;line-height:1.8}
+.tip-msg b{color:#1f3a6c}
+
+.footer{background:#1f3a6c;color:#ccc;text-align:center;padding:20px;font-size:13px;margin-top:40px;line-height:2}
+.footer .disclaimer{color:#bbb;font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="org-name">
+    <h1>北榆市教育体育局</h1>
+    <p>Beiyu Municipal Education & Sports Bureau · 违规违纪举报平台</p>
+  </div>
+  <div class="hotline">举报热线：<b>0398-12345</b></div>
+</div>
+
+<div class="main">
+<div class="report-wrap">
+  <h2 class="page-title">违规违纪行为举报</h2>
+  <p class="sub-tip">欢迎社会各界对学校及教职员工的违规违纪行为进行如实举报。本平台依法保护举报人信息，请据实填写以下内容，带 <span style="color:#c0392b">*</span> 项为必填。</p>
+
+  <div class="report-card">
+    <form id="reportForm" onsubmit="return submitReport(event)">
+      <!-- 所属学校（必填） -->
+      <div class="field">
+        <label for="school"><span class="req">*</span>所属学校</label>
+        <select id="school" name="school" required>
+          <option value="">请选择学校</option>
+          <option>北榆市·昭明中学</option>
+          <option>北榆市第一中学</option>
+          <option>北榆市第二中学</option>
+          <option>北榆市实验高级中学</option>
+          <option>北榆市育才中学</option>
+          <option>其他（请在学校名称栏填写）</option>
+        </select>
+        <div class="hint">若选择"其他"，请在下方"具体描述"中注明学校全称。</div>
+      </div>
+
+      <!-- 涉事教师（必填） -->
+      <div class="field">
+        <label for="teacher"><span class="req">*</span>涉事教师</label>
+        <input id="teacher" name="teacher" type="text" placeholder="请填写涉事教师姓名（如确为集体行为可填'不详'）" required>
+        <div class="hint">请尽量提供准确姓名，以便核查；信息不实将影响受理。</div>
+      </div>
+
+      <!-- 举报类型 -->
+      <div class="field">
+        <label>举报类型</label>
+        <div class="radio-group" id="typeGroup">
+          <label><input type="radio" name="type" value="体罚或变相体罚" checked> 体罚或变相体罚</label>
+          <label><input type="radio" name="type" value="有偿补课"> 有偿补课</label>
+          <label><input type="radio" name="type" value="收受礼金礼品"> 收受礼金礼品</label>
+          <label><input type="radio" name="type" value="学术不端"> 学术不端</label>
+          <label><input type="radio" name="type" value="其他"> 其他</label>
+        </div>
+      </div>
+
+      <!-- 具体描述（选填） -->
+      <div class="field">
+        <label for="detail">具体描述 <span class="opt">（选填）</span></label>
+        <textarea id="detail" name="detail" placeholder="请简要描述事件发生的时间、地点、经过及相关证据线索（选填，最多500字）" maxlength="500"></textarea>
+        <div class="hint">本项选填，描述越具体越有利于核查；请勿在此上传个人隐私信息。</div>
+      </div>
+
+      <!-- 联系方式（选填） -->
+      <div class="field">
+        <label for="contact">联系方式 <span class="opt">（选填，便于反馈）</span></label>
+        <input id="contact" name="contact" type="tel" placeholder="手机号或邮箱（选填）">
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-submit">提交举报</button>
+        <button type="reset" class="btn-reset" onclick="resetForm()">清空重填</button>
+      </div>
+      <p class="tip-msg">提交即表示您确认所填信息真实有效。教体局信访与监察部门将依法对举报内容进行登记、核查并依规处置；对恶意捏造、诬告陷害的，将依法追究相应责任。</p>
+    </form>
+  </div>
+</div>
+</div>
+
+<footer class="footer">
+  <p>© 2024-2025 北榆市教育体育局 版权所有 · 举报受理电话：0398-12345</p>
+  <p class="disclaimer">此页面为项目功能演示页面，其中机构与信息均为虚构，切勿当真</p>
+</footer>
+
+<script>
+// 单选高亮
+document.querySelectorAll('#typeGroup label').forEach(function(lab){
+  lab.addEventListener('click',function(){
+    document.querySelectorAll('#typeGroup label').forEach(function(l){l.classList.remove('checked')});
+    lab.classList.add('checked');
+  });
+});
+document.querySelector('#typeGroup label').classList.add('checked');
+
+function submitReport(e){
+  e.preventDefault();
+  var school=document.getElementById('school').value.trim();
+  var teacher=document.getElementById('teacher').value.trim();
+  if(!school){alert('请选择所属学校');return false;}
+  if(!teacher){alert('请填写涉事教师姓名');return false;}
+  // 生成受理编号并写入 sessionStorage，随后跳转到 only_end.html
+  var no='BJ-'+new Date().getFullYear()+String(new Date().getMonth()+1).padStart(2,'0')+String(new Date().getDate()).padStart(2,'0')+'-'+Math.floor(Math.random()*9000+1000);
+  try{sessionStorage.setItem('report_case_no',no);}catch(err){}
+  window.location.href='only_end.html';
+  return false;
+}
+function resetForm(){setTimeout(function(){document.querySelectorAll('#typeGroup label').forEach(function(l){l.classList.remove('checked')});document.querySelector('#typeGroup label').classList.add('checked');},0);}
+</script>
+</body>
+</html>

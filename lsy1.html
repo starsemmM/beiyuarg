@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人简介 · 李思雨 - 北榆市·昭明中学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"WenQuanYi Micro Hei","Microsoft YaHei",sans-serif;background:#1f3a6c;color:#eaf0f7;line-height:1.7;font-size:15px;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:60px 24px;cursor:pointer;user-select:none}
+#wrap{width:100%;max-width:760px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.line{text-align:center;color:#eaf0f7;font-size:15px;opacity:0;transform:translateY(6px);transition:opacity .35s,transform .35s}
+.line.in{opacity:1;transform:translateY(0)}
+.tip{position:fixed;bottom:20px;left:0;right:0;text-align:center;font-size:12px;color:#a9b8d6}
+</style>
+</head>
+<body>
+<div id="wrap"></div>
+<div class="tip">点击页面任意位置逐行显现 · 此页面为arg解密需要，其中所有信息均为虚构，切勿当真</div>
+<script>
+var visited_zjg1 = localStorage.getItem("visited_zjg1")==="1";
+var visited_zyy1 = localStorage.getItem("visited_zyy1")==="1";
+var visited_whr1 = localStorage.getItem("visited_whr1")==="1";
+if(!(visited_zjg1 && visited_zyy1 && visited_whr1)){
+    alert("此页面为最终页面，请先确保访问过其他三人的页面后再次访问此页面");
+    window.location.href="index.html";
+}
+var LINES = [];
+LINES.push("你好");
+LINES.push("没错，我是刘思雨");
+LINES.push("相信你已经看过了其他三位的页面，我也就不多赘述了");
+LINES.push("事情的全貌，已经很清晰了");
+LINES.push("这件事只能由我来做，作为学校的网站维护员，我有很好的条件来埋下线索");
+LINES.push("我在找过校长，和张老师后，应该已经没有机会再碰这个网站了");
+LINES.push("所以，只有在网站中埋下线索，支援未来");
+LINES.push("我只想还王同学一个公道");
+LINES.push("如果你愿意帮我");
+LINES.push("就去教体局的举报平台提交线索");
+LINES.push("如果连教体局的人也不愿意接手这件事");
+LINES.push("我也认了");
+LINES.push("再次感谢你");
+LINES.push("拜托了");
+LINES.push("制作者提示：你现在可以去到jiaotiju.html了，什么？你不会吗，emm，再去多玩几个arg吧");
+var idx=0;
+document.body.addEventListener("click",function(){
+    if(idx>=LINES.length) return;
+    var d=document.createElement("div");
+    d.className="line";
+    d.textContent=LINES[idx++];
+    document.getElementById("wrap").appendChild(d);
+    requestAnimationFrame(function(){ d.classList.add("in"); });
+});
+</script>
+</body>
+</html>

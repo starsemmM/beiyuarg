@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>校务异常事件归档 · 资料汇编 - 北榆市昭明中学</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "WenQuanYi Micro Hei", "Microsoft YaHei", sans-serif; background: #f5f6fa; color: #333; line-height: 1.7; font-size: 14px; font-weight: normal; }
+a { color: #333; text-decoration: none; }
+img { display: block; max-width: 100%; }
+h1,h2,h3,h4,h5,h6 { font-weight: normal; }
+
+.top-bar { background: #2c4a7a; color: #fff; padding: 8px 40px; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+.top-bar a { color: #ccc; margin-left: 18px; }
+.header { background: #fff; padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
+.school-name h1 { font-size: 26px; color: #2c4a7a; letter-spacing: 2px; }
+.school-name p { font-size: 12px; color: #888; margin-top: 2px; }
+.search-box { display: flex; }
+.search-box input { width: 220px; padding: 8px 14px; border: 1px solid #bbb; border-right: none; border-radius: 4px 0 0 4px; outline: none; font-size: 14px; background: #fff; color: #333; }
+.search-box input:focus { border-color: #888; }
+.search-box button { padding: 8px 16px; border: 1px solid #888; background: #888; color: #fff; cursor: pointer; border-radius: 0 4px 4px 0; font-size: 14px; }
+.search-box button:hover { background: #666; }
+
+.nav-bar { background: #fff; border-bottom: 1px solid #ddd; padding: 0 40px; position: sticky; top: 0; z-index: 100; }
+.nav-bar ul { display: flex; list-style: none; }
+.nav-bar li a { display: block; padding: 14px 22px; font-size: 15px; color: #444; border-bottom: 3px solid transparent; transition: all .2s; }
+.nav-bar li a:hover { color: #2c4a7a; border-bottom-color: #aaa; }
+.nav-bar li a.active { color: #2c4a7a; border-bottom-color: #aaa; }
+
+/* 归档主体 */
+.dossier-container { max-width: 1000px; margin: 30px auto; padding: 0 20px; flex: 1; }
+.dossier-container h2.page-title { font-size: 22px; color: #2c4a7a; margin-bottom: 8px; padding-bottom: 10px; border-bottom: 2px solid #ddd; }
+.dossier-container .sub-tip { font-size: 13px; color: #888; margin-bottom: 20px; }
+
+.evidence-section { background: #fff; border-radius: 8px; padding: 20px 24px; margin-bottom: 18px; border: 1px solid #e0e0e0; }
+.evidence-section h3 { font-size: 16px; color: #2c4a7a; margin-bottom: 12px; padding-left: 12px; border-left: 3px solid #aaa; }
+.evidence-item { padding: 12px 0; border-bottom: 1px dashed #eee; }
+.evidence-item:last-child { border-bottom: none; }
+.evidence-item .title { font-size: 14px; color: #444; margin-bottom: 4px; }
+.evidence-item .title b { color: #2c4a7a; font-weight: 500; }
+.evidence-item .desc { font-size: 13px; color: #666; }
+.evidence-item .src { font-size: 12px; color: #999; margin-top: 3px; }
+.toggle-btn { display: inline-block; margin-top: 6px; font-size: 12px; color: #888; cursor: pointer; }
+.toggle-btn:hover { color: #555; text-decoration: underline; }
+.cipher { display: none; margin-top: 8px; padding: 10px 14px; background: #f8f9fc; border: 1px solid #e8e8e8; border-radius: 4px; font-family: monospace; font-size: 12px; color: #888; word-break: break-all; white-space: pre-wrap; }
+.cipher.open { display: block; }
+
+/* 时间线 */
+.tl { margin-top: 8px; }
+.tl-item { padding-left: 18px; border-left: 2px solid #ddd; margin-bottom: 16px; position: relative; }
+.tl-item::before { content: ''; position: absolute; left: -6px; top: 4px; width: 10px; height: 10px; background: #999; border-radius: 50%; }
+.tl-date { font-size: 12px; color: #888; }
+.tl-text { font-size: 13px; color: #555; }
+
+.footer { background: #2c4a7a; color: #ccc; text-align: center; padding: 20px; font-size: 13px; margin-top: 40px; line-height: 2; }
+.footer .disclaimer { color: #bbb; font-size: 12px; }
+.fade-in { animation: fadeIn .6s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+    <span>欢迎访问北榆市昭明中学官方网站</span>
+    <div><a href="#">教师入口</a><a href="#">学生入口</a><a href="#">家长入口</a></div>
+</div>
+
+<div class="header">
+    <div class="school-name">
+        <h1>北榆市昭明中学</h1>
+        <p>Sanmenxia No.1 Senior High School · 建校于1956年</p>
+    </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="输入关键词搜索...">
+        <button onclick="alert('线索汇编页仅作归档查阅，请通过左侧导航返回首页')">搜索</button>
+    </div>
+</div>
+
+<nav class="nav-bar">
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="news.html">近期大事</a></li>
+        <li><a href="leaders.html">领导班子</a></li>
+        <li><a href="teachers.html">名师风貌</a></li>
+        <li><a href="students.html">优秀学生</a></li>
+        <li><a href="about.html">关于我们</a></li>
+    </ul>
+</nav>
+
+<div class="dossier-container fade-in">
+    <h2 class="page-title">校务异常事件归档 · 资料汇编</h2>
+    <div class="sub-tip">说明：本汇编依据校园官网公示信息、环境监测终端日志及监控归档资料整理，供校务内部核对参考。涉及学生个人信息部分已作脱敏处理。</div>
+
+    <div class="evidence-section">
+        <h3>一、事件时间线（2025年11月）</h3>
+        <div class="tl">
+            <div class="tl-item"><div class="tl-date">2025-11-10 至 11-15</div><div class="tl-text">第十二届校园科技节举办期间，高二（3）班王浩然同学"校园环境监测终端"在校园内部署试运行。</div></div>
+            <div class="tl-item"><div class="tl-date">2025-11-15 18:00 — 18:47</div><div class="tl-text">实验楼三层东侧楼梯间及科技创新工作室走廊监控暂停（设备例行维护），该时段环境监测节点记录到<b>持续约45分钟的异常震动与音频信号</b>。</div></div>
+            <div class="tl-item"><div class="tl-date">2025-11-16</div><div class="tl-text">王浩然同学因"腿部软组织挫伤"请假，后续按程序办理休学手续。</div></div>
+            <div class="tl-item"><div class="tl-date">2025-11-20 21:10</div><div class="tl-text">环境监测终端位于实验楼三层的节点被<b>手动拆除</b>，终端记录中止。</div></div>
+            <div class="tl-item"><div class="tl-date">2025-11下旬</div><div class="tl-text">学校班子会研究确定王浩然同学休学一事对外统一口径。</div></div>
+        </div>
+    </div>
+
+    <div class="evidence-section">
+        <h3>二、关键证据清单</h3>
+
+        <div class="evidence-item">
+            <div class="title">证据 A · 环境监测终端日志（11月15日 18:02）</div>
+            <div class="desc">节点 WH-03（实验楼三层东侧楼梯间）记录震动幅度异常升高，持续约45分钟，同期音频通道捕捉到多人交谈与推搡特征声纹。</div>
+            <div class="src">来源：env_monitor.html · 创新项目公示页</div>
+
+        <div class="evidence-item">
+            <div class="title">证据 B · 监控归档异常（11月15日 18:00—18:47）</div>
+            <div class="desc">实验楼三层东侧楼梯间及科技创新工作室走廊监控资料缺失，归档状态标注为"资料缺失 · 归档未完成"，与设备维护窗口时段完全吻合。</div>
+            <div class="src">来源：monitor_archive.html · 监控资料归档查询</div>
+        <div class="evidence-item">
+            <div class="title">证据 C · 竞赛编号异常（2026年3月公示）</div>
+            <div class="desc">2026年3月全国学科竞赛公示中，高二（3）班陈默同学所获银牌编号与<b>王浩然同学此前金牌编号同为 2025WL001</b>，编号重复存疑，建议复核原始获奖名单。</div>
+            <div class="src">来源：students.html · 优秀学生 / news.html · 学科竞赛新闻</div>
+        <div class="evidence-item">
+            <div class="title">证据 D · 运动会参赛记录矛盾（2026年4月公示）</div>
+            <div class="desc">2026年4月15日春季田径运动会新闻称王浩然同学为高三（1）班接力选手并"赛前意外受伤"，然王浩然实为高二（3）班学生，且休学状态与"参赛选手"身份存在时间冲突。</div>
+            <div class="src">来源：news.html · 春季田径运动会 / students.html · 王浩然简介</div>
+
+    <div class="evidence-section">
+        <h3>三、关联师生索引</h3>
+        <div class="evidence-item"><div class="desc">事件当事人：<b>王浩然</b>（高二3班 · 竞赛金牌 · 休学）—— <a href="whr1.html">查看简介</a></div></div>
+        <div class="evidence-item"><div class="desc">竞赛教练 / 休学审批：<b>张明远</b>（数学 · 省特级教师）—— <a href="zyy1.html">查看简介</a></div></div>
+        <div class="evidence-item"><div class="desc">对外口径决策：<b>赵建国</b>（校长 · 党总支书记）—— <a href="zjg1.html">查看简介</a></div></div>
+        <div class="evidence-item"><div class="desc">线索整理 / 官网维护：<b>李思雨</b>（高三1班 · 市三好学生）—— <a href="lsy1.html">查看简介</a></div></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2024-2025 北榆市昭明中学 版权所有</p>
+    <p class="disclaimer">此网站为arg解密需要，其中所有信息均为虚构，切勿当真</p>
+</footer>
+
+<script>var searchMap = {
+    "李思雨":"lsy.html","lsy":"lsy.html",
+    "王浩然":"whr.html","whr":"whr.html",
+    "陈思远":"ces.html","ces":"ces.html",
+    "赵雨萱":"zyx.html","zyx":"zyx.html",
+    "刘子轩":"lzx2.html","lzx":"lzx2.html","刘子轩2":"lzx2.html",
+    "孙梦琪":"smq.html","smq":"smq.html",
+    "张明远":"zyy.html","zyy":"zyy.html",
+    "吴敏":"wm.html","wm":"wm.html",
+    "郑涛":"zt.html","zt":"zt.html",
+    "黄丽华":"hlh.html","hlh":"hlh.html",
+    "刘洋":"ly.html","ly":"ly.html",
+    "孙丽娟":"slj.html","slj":"slj.html",
+    "赵建国":"zjg.html","zjg":"zjg.html",
+    "刘红梅":"lhm.html","lhm":"lhm.html",
+    "陈志强":"czh.html","czh":"czh.html",
+    "周伟":"zw.html","zw":"zw.html",
+    "吴敏2":"wmyj.html","wmyj":"wmyj.html",
+    "环境监测终端":"env_monitor.html","环境监测":"env_monitor.html","创新项目":"env_monitor.html","ems":"env_monitor.html",
+    "数据附件":"logs.html","日志":"logs.html","归档":"logs.html",
+    "实验楼":"lab_building.html","设施":"lab_building.html",
+    "监控":"monitor_archive.html","监控资料":"monitor_archive.html",
+    "线索":"clue_dossier.html","证据":"clue_dossier.html","异常":"clue_dossier.html","汇编":"clue_dossier.html"
+};
+
+function doSearch(){
+    var kw=document.getElementById("searchInput").value.trim();
+    if(kw==="") return;
+    var visitedMonitor = (localStorage.getItem("visited_monitor")==="1");
+    if(visitedMonitor){
+        if(kw==="李思雨"||kw==="lsy"){ window.location.href="clue_dossier.html"; return; }
+        if(kw==="王浩然"||kw==="whr"){ window.location.href="clue_dossier.html"; return; }
+    }
+    if(searchMap[kw]) window.location.href=searchMap[kw];
+    else alert("未查找到对应信息");
+}
+document.getElementById("searchInput").addEventListener("keydown", function(e) { if (e.key === "Enter") doSearch(); });
+</script>
+</body>
+</html>

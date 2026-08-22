@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>数据附件归档 · 环境监测终端 — 北榆市·昭明中学</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#333;line-height:1.7;min-height:100vh;display:flex;flex-direction:column}
+.header{background:#2c4a7a;padding:14px 40px;display:flex;justify-content:space-between;align-items:center}
+.logo{color:#fff;font-size:19px}
+.nav{display:flex;gap:22px}
+.nav a{color:#d8dde6;text-decoration:none;font-size:14px;padding:4px 0;border-bottom:3px solid transparent}
+.nav a:hover{color:#fff;border-bottom-color:#aaa}
+.search-box{display:flex;gap:8px}
+.search-box input{padding:6px 12px;border:none;border-radius:4px;font-size:14px;width:180px;outline:none}
+.search-box input:focus{box-shadow:0 0 0 2px #888}
+.search-box button{padding:6px 15px;background:#888;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:14px}
+.main{max-width:900px;margin:30px auto;padding:0 40px;flex:1;width:100%}
+.crumb{font-size:13px;color:#888;margin-bottom:16px}
+.crumb a{color:#888;text-decoration:none}
+.section-title{font-size:17px;color:#2c4a7a;margin:22px 0 12px;padding-bottom:8px;border-bottom:1px solid #eee}
+.intro{font-size:14px;color:#555;margin-bottom:16px;text-align:justify}
+.entry{background:#fff;border:1px solid #eee;border-radius:8px;padding:14px 16px;margin-bottom:12px}
+.entry-head{display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none}
+.entry-date{font-family:"Consolas",monospace;font-size:13px;color:#888}
+.entry-title{font-size:14px;color:#2c4a7a;flex:1;margin-left:12px}
+.entry-toggle{color:#999;font-size:12px}
+.entry-body{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed #eee;font-size:13px;color:#555}
+.entry-body.open{display:block}
+.footer{text-align:center;padding:22px;background:#2c4a7a;color:#ccc;font-size:13px;margin-top:40px}
+.footer .disclaimer{color:#aaa;font-size:12px;margin-top:6px}
+.clue-key{font-weight:700;color:#1a3a6c;border-bottom:2px solid #2c4a7a;background:#eef2f8;padding:0 3px;border-radius:3px;}</style>
+</head>
+<body>
+<header class="header">
+<div class="logo">北榆市·昭明中学</div>
+<nav class="nav">
+<a href="index.html">首页</a>
+<a href="news.html">近期大事</a>
+<a href="leaders.html">领导班子</a>
+<a href="teachers.html">名师风貌</a>
+<a href="students.html">优秀学生</a>
+<a href="about.html">关于我们</a>
+</nav>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="输入师生姓名检索">
+<button onclick="doSearch()">搜索</button>
+</div>
+</header>
+
+<main class="main">
+<div class="crumb"><a href="index.html">首页</a> / <a href="env_monitor.html">创新项目公示</a> / <span>数据附件归档</span></div>
+<h1 class="section-title">数据附件归档（脱敏索引）</h1>
+<p class="intro">以下为环境监测终端在试运行期间留存的原始数据包脱敏索引。每条记录仅包含采集时间、节点位置与经校验的数据摘要。如需调阅完整原始数据，请通过校务查询联系项目指导教师。</p>
+<p class="intro">设施主体部署于<span class="clue-key">实验楼</span>三层。</p>
+
+<div class="entry">
+<div class="entry-head" onclick="this.nextElementSibling.classList.toggle('open')">
+<span class="entry-date">2025-11-12 17:48</span>
+<span class="entry-title">实验楼三层 · 东走廊 — 异常震动事件记录</span>
+<span class="entry-toggle">[展开]</span>
+</div>
+<div class="entry-body">节点位置：实验楼三层东侧走廊。记录到持续约 3 分钟的异常震动信号，幅度高于环境基线，无对应温湿度/噪声异常。数据已自动归档，摘要经脱敏处理，完整原始数据请通过校务查询调阅。</div>
+</div>
+
+<div class="entry">
+<div class="entry-head" onclick="this.nextElementSibling.classList.toggle('open')">
+<span class="entry-date">2025-11-15 18:02</span>
+<span class="entry-title">实验楼三层 · 东侧楼梯间 — 震动与音频异常</span>
+<span class="entry-toggle">[展开]</span>
+</div>
+<div class="entry-body">节点位置：实验楼三层东侧楼梯间。记录到持续约 45 分钟的震动与音频异常信号，18:47 节点恢复在线后数据补传完成。该时段对应设施检修窗口，详细记录已留存归档。</div>
+</div>
+
+<div class="entry">
+<div class="entry-head" onclick="this.nextElementSibling.classList.toggle('open')">
+<span class="entry-date">2025-11-20 21:10</span>
+<span class="entry-title">实验楼三层 · 东走廊 — 节点被手动拆除</span>
+<span class="entry-toggle">[展开]</span>
+</div>
+<div class="entry-body">节点位置：实验楼三层东走廊。记录显示节点于 21:10 被手动拆除，供电中断，数据记录终止。拆除原因及操作人信息未留存于环境监测系统，相关说明请通过校务查询核实。</div>
+</div>
+</main>
+
+<footer class="footer">
+© 2024-2025 北榆市·昭明中学 版权所有
+<div class="disclaimer">此网站为arg解密需要，其中所有信息均为虚构，切勿当真</div>
+</footer>
+
+<script>var searchMap = {
+    "李思雨":"lsy.html","lsy":"lsy.html",
+    "王浩然":"whr.html","whr":"whr.html",
+    "陈思远":"ces.html","ces":"ces.html",
+    "赵雨萱":"zyx.html","zyx":"zyx.html",
+    "刘子轩":"lzx2.html","lzx":"lzx2.html","刘子轩2":"lzx2.html",
+    "孙梦琪":"smq.html","smq":"smq.html",
+    "张明远":"zyy.html","zyy":"zyy.html",
+    "吴敏":"wm.html","wm":"wm.html",
+    "郑涛":"zt.html","zt":"zt.html",
+    "黄丽华":"hlh.html","hlh":"hlh.html",
+    "刘洋":"ly.html","ly":"ly.html",
+    "孙丽娟":"slj.html","slj":"slj.html",
+    "赵建国":"zjg.html","zjg":"zjg.html",
+    "刘红梅":"lhm.html","lhm":"lhm.html",
+    "陈志强":"czh.html","czh":"czh.html",
+    "周伟":"zw.html","zw":"zw.html",
+    "吴敏2":"wmyj.html","wmyj":"wmyj.html",
+    "环境监测终端":"env_monitor.html","环境监测":"env_monitor.html","创新项目":"env_monitor.html","ems":"env_monitor.html",
+    "数据附件":"logs.html","日志":"logs.html","归档":"logs.html",
+    "实验楼":"lab_building.html","设施":"lab_building.html",
+    "监控":"monitor_archive.html","监控资料":"monitor_archive.html",
+    "线索":"clue_dossier.html","证据":"clue_dossier.html","异常":"clue_dossier.html","汇编":"clue_dossier.html"
+};
+
+function doSearch(){
+    var kw=document.getElementById("searchInput").value.trim();
+    if(kw==="") return;
+    if(searchMap[kw]) window.location.href=searchMap[kw];
+    else alert("未查找到对应信息");
+}
+
+
+document.getElementById("searchInput").addEventListener("keypress",function(e){if(e.key==="Enter")doSearch();});
+</script>
+</body>
+</html>
